@@ -101,13 +101,27 @@
         </body>
         ";
      }
-     if ($opcion == "crear")
+     /////////
+     $nombre=(isset($_POST["nombre"]) && $_POST["nombre"] !="")? $_POST["nombre"] : "Sin llenar";nombre_nue
+     if ($opcion == "crear"){
+          $nombrearch= $nombre;
+          $nuevoArch = fopen ($nombrearch, 'w');
            return crear();
-     else 
-          if ($opcion == "renombrar")
+     }      
+     else{ 
+          if ($opcion == "renombrar"){
+               $nombreN=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
+               $nombreViejo = $nombre;
+               $nombreNuevo = $nombreN;
+               rename($nombreViejo, "./$nombreNuevo/");
                return renombrar();
-          else 
-               if ($opcion == "eliminar")
+          }
+          else{ 
+               if ($opcion == "eliminar"){
+                    $archEliminar = $nombre;
+                    unlink($archEliminar);
                     return eliminar();
-               
+               }      
+          } 
+     }         
 ?>
