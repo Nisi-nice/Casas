@@ -15,7 +15,11 @@
     // renombrar
     $nombreViejo = 'datos.txt';
     $nombreNuevo = 'datos2.txt';
-    rename($nombreViejo, $nombreNuevo);
+    rename($nombreViejo, "./$nombreNuevo/");
+
+    //eliminar
+    $archEliminar = './datos2.txt';
+    unlink($archEliminar);
     ?>
 </body>
 </html>
