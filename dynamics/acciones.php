@@ -36,8 +36,10 @@
                <input type='submit' value='CONTINUAR'/><br>
                </form>
           </div>
-          <form action='./exit.php' method='post' target='_self'>
+          <form action='./registro.php' method='post' target='_self'>
              <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+          </form>
+          <form action='./exit.php' method='post' target='_self'>
              <div id='centro1'><input type='submit' value='SALIR'/><br></div>
           </form>
      </body>
@@ -66,10 +68,12 @@
                     <input type='submit' value='CONTINUAR'/><br>
                     </form>
                </div>
+               <form action='./registro.php' method='post' target='_self'>
+               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+               </form>
                <form action='./exit.php' method='post' target='_self'>
-             <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-             <div id='centro1'><input type='submit' value='SALIR'/><br></div>
-             </form>
+               <div id='centro1'><input type='submit' value='SALIR'/><br></div>
+               </form>
           </body>
           ";
           }
@@ -96,8 +100,10 @@
                          <input type='submit' value='CONTINUAR'/><br>
                          </form>
                     </div>
-                    <form action='./exit.php' method='post' target='_self'>
+                    <form action='./registro.php' method='post' target='_self'>
                     <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+                    </form>
+                    <form action='./exit.php' method='post' target='_self'>
                     <div id='centro1'><input type='submit' value='SALIR'/><br></div>
                     </form>
                </body>

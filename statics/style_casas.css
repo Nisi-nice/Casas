@@ -7,6 +7,24 @@ div{
     font-family: "text", serif;
 }
 /*-----------------------------Título--------------------------------*/
+#inicio{
+    background-color: rgb(182, 144, 197);
+    animation: cambio5 8s infinite;
+    display: grid;
+    justify-content: center;
+    margin:4%;
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 10%;
+}
+@keyframes cambio5{
+    50% {background: #e9eea6;}
+}
 
 #titulo{
     font-size: 400%;
@@ -133,4 +151,23 @@ body{
 }
 @keyframes cambio3{
     50% {background: #f5bfe9;}
+}
+
+/*-----------------------------registro--------------------------------*/
+#registro{
+    background-color: rgb(182, 144, 197);
+    animation: cambio6 8s infinite;
+    display: grid;
+    justify-content: center;
+    margin:2%;
+    border: 2px solid black;
+    width: 70%;
+    text-align: center;
+    height: 90%;
+    left: 12%;
+    position: absolute;
+    border-radius: 10%;
+}
+@keyframes cambio6{
+    50% {background: #e9eea6;}
 }

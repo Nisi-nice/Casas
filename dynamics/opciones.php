@@ -25,10 +25,12 @@
                     <input type='submit' value='CREAR'/><br>
                   </form>
              </div>
-             <form action='./exit.php' method='post' target='_self'>
-             <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-             <div id='centro1'><input type='submit' value='SALIR'/><br></div>
-             </form>
+               <form action='./registro.php' method='post' target='_self'>
+               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+               </form>
+               <form action='./exit.php' method='post' target='_self'>
+               <div id='centro1'><input type='submit' value='SALIR'/><br></div>
+               </form>
         </body>
         ";
         }
@@ -55,10 +57,12 @@
                     <input type='submit' value='ELIMINAR'/><br>
                   </form>
              </div>
-             <form action='./exit.php' method='post' target='_self'>
-             <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-             <div id='centro1'><input type='submit' value='SALIR'/><br></div>
-             </form>
+               <form action='./registro.php' method='post' target='_self'>
+               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+               </form>
+               <form action='./exit.php' method='post' target='_self'>
+               <div id='centro1'><input type='submit' value='SALIR'/><br></div>
+               </form>
         </body>
         ";
      }
@@ -88,10 +92,12 @@
                     <input type='submit' value='RENOMBRAR'/><br>
                   </form>
              </div>
-             <form action='./exit.php' method='post' target='_self'>
-             <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-             <div id='centro1'><input type='submit' value='SALIR'/><br></div>
-             </form>
+               <form action='./registro.php' method='post' target='_self'>
+               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+               </form>
+               <form action='./exit.php' method='post' target='_self'>
+               <div id='centro1'><input type='submit' value='SALIR'/><br></div>
+               </form>
         </body>
         ";
      }
