@@ -1,4 +1,6 @@
 <?php
+session_start();
+session_destroy();
 echo "
      <!DOCTYPE html>
      <html lang='en'>
@@ -15,6 +17,7 @@ echo "
         <br>
         <form action='../ingresar.html' method='post' target='_self'>
             <input type='submit' value='VOLVER AL INICIO'/>
+
         </form>
     </div>
      </body>

@@ -1,6 +1,7 @@
 <?php
-     $nombre=(isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-     $casa=(isset($_POST["casa"]) && $_POST["casa"] != "")? $_POST["casa"] : false;
+     session_start();
+     $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
+     $_SESSION["casa"] = (isset($_POST["casa"]) && $_POST["casa"] != "")? $_POST["casa"] : false;
 
      echo "
      <!DOCTYPE html>
@@ -12,9 +13,9 @@
          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
          <title>Document</title>
      </head>
-          <div id='titulo'> ¿Qué quieres hacer hoy $nombre?</div>";
+          <div id='titulo'> ¿Qué quieres hacer hoy ". $_SESSION['nombre']. ".?</div>";
           function desplegar_tepos(){
-     echo "<head>
+          echo "<head>
           <link rel='stylesheet' href='./style_casas.css'>
           </head>
           <body>
@@ -109,12 +110,12 @@
                </body>
                ";
                }
-     if ($casa == "Teporingos")
+     if ($_SESSION ['casa'] == "Teporingos")
            return desplegar_tepos();
      else 
-          if ($casa == "Ajolotes")
+          if ($_SESSION ['casa'] == "Ajolotes")
                return desplegar_ajols();
           else 
-               if ($casa == "Halcones")
+               if ($_SESSION ['casa'] == "Halcones")
                     return desplegar_halcons();
 ?>

@@ -1,6 +1,7 @@
 <?php
-     $opcion=(isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
-     $boton=(isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
+     session_start();
+     $_SESSION["opcion"] = (isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
+     $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
 
      function crear(){
         echo "<head>
@@ -101,13 +102,13 @@
         </body>
         ";
      }
-     if ($opcion == "crear")
+     if ($_SESSION["opcion"] == "crear")
            return crear();
      else 
-          if ($opcion == "renombrar")
+          if ($_SESSION["opcion"] == "renombrar")
                return renombrar();
           else 
-               if ($opcion == "eliminar")
+               if ($_SESSION["opcion"] == "eliminar")
                     return eliminar();
                
 ?>
