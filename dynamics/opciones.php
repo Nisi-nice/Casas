@@ -1,7 +1,10 @@
 <?php
      session_start();
-     $_SESSION["opcion"] = (isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
      $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
+     $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
+     $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
+     $_SESSION["nombre_nue"]=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
+     $_SESSION["opcion"] = (isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
 
      function crear(){
         echo "<head>
@@ -10,7 +13,7 @@
              <body>
              <div class='opcion'>
                     <center><h1>Elige:</h1></center>
-                    <formaction='./accion.php' method='post' target='_self'>
+                    <form action='./crear.php' method='post' target='_self'>
                     <label>¿Qué quieres crear?:
                     <br>
                     <input type='radio' name='opcion' checked value='archivo'>
@@ -21,7 +24,7 @@
                     <br>
                     </label><br>
                     <label>Nombre de tu carpeta o arhivo:
-                    <input name='nombre'/>
+                    <input name='nombre_arch'/>
                     </label><br>
                     <input type='submit' value='CREAR'/><br>
                   </form>
@@ -42,7 +45,7 @@
              <body>
              <div class='opcion'>
                     <center><h1>Elige:</h1></center>
-                    <formaction='./accion.php' method='post' target='_self'>
+                    <form action='./eliminar.php' method='post' target='_self'>
                     <label>¿Qué quieres eliminar?:
                     <br>
                     <input type='radio' name='opcion' checked value='archivo'>
@@ -53,7 +56,7 @@
                     <br>
                     </label><br>
                     <label>Nombre de la carpeta o arhivo:
-                    <input name='nombre'/>
+                    <input name='nombre_arch'/>
                     </label><br>
                     <input type='submit' value='ELIMINAR'/><br>
                   </form>
@@ -74,7 +77,7 @@
              <body>
              <div class='opcion'>
                     <center><h1>Elige:</h1></center>
-                    <form action='./accion.php' method='post' target='_self'>
+                    <form action='./renombrar.php' method='post' target='_self'>
                     <label>¿Qué quieres renombrar?:
                     <br>
                     <input type='radio' name='opcion' checked value='archivo'>
@@ -85,7 +88,7 @@
                     <br>
                     </label><br>
                     <label>Nombre de la carpeta o arhivo:
-                    <input name='nombre'/>
+                    <input name='nombre_arch'/>
                     </label><br>
                     <label>Nuevo nombre de la carpeta o arhivo:
                     <input name='nombre_nue'/>
@@ -102,24 +105,17 @@
         </body>
         ";
      }
-     $nombre=(isset($_POST["nombre"]) && $_POST["nombre"] !="")? $_POST["nombre"] : "Sin llenar";nombre_nue
-     if ($opcion == "crear"){
-          $nombrearch= $nombre;
-          $nuevoArch = fopen ($nombrearch, 'w');
+
+
+     if ($_SESSION["opcion"] == "crear"){
            return crear();
      }      
      else{ 
-          if ($opcion == "renombrar"){
-               $nombreN=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
-               $nombreViejo = $nombre;
-               $nombreNuevo = $nombreN;
-               rename($nombreViejo, "./$nombreNuevo/");
+          if ($_SESSION["opcion"] == "renombrar"){
                return renombrar();
           }
           else{ 
-               if ($opcion == "eliminar"){
-                    $archEliminar = $nombre;
-                    unlink($archEliminar);
+               if ($_SESSION["opcion"] == "eliminar"){
                     return eliminar();
                }      
           } 
