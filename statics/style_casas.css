@@ -1,0 +1,136 @@
+/*-----------------------------Título--------------------------------*/
+@font-face {
+    font-family: "text";
+    src: url('./HelloMonday.ttf');
+}
+div{
+    font-family: "text", serif;
+}
+/*-----------------------------Título--------------------------------*/
+
+#titulo{
+    font-size: 400%;
+    background-color: #c772ca;
+    text-align: center;
+}
+/*-----------------------------teporingos--------------------------------*/
+#tepos{
+    background-color: rgb(165, 140, 85);
+    background-image: url(./tepos.jpg);
+    animation: cambio1 8s infinite;
+    display: grid;
+    justify-content: center;
+    margin:4%;
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 10%;
+}
+@keyframes cambio1{
+    50% {background: #e9eea6;}
+}
+/*-----------------------------ajolotes--------------------------------*/
+#ajols{
+    background-color: rgb(189, 93, 117);
+    background-image: url(./ajolotito1.jpg);
+    animation: cambio2 8s infinite;
+    display: grid;
+    justify-content: center;
+    margin:4%;
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 10%;
+}
+@keyframes cambio2{
+    50% {background: #d897b2;}
+}
+/*-----------------------------halcones--------------------------------*/
+#halcons{
+    background-color: rgb(70, 58, 20);
+    background-image: url(./halcon.jpg);
+    animation: cambio3 8s infinite;
+    display: grid;
+    justify-content: center;
+    margin:4%;
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 10%;
+}
+@keyframes cambio3{
+    50% {background: #a3804c;}
+}
+
+/*-----------------------------Opciones--------------------------------*/
+
+.opcion{
+    background-color: rgb(182, 144, 197);
+    animation: cambio4 8s infinite;
+    border: 2px solid black;
+    width: 35%;
+    text-align: center;
+    height: 70%;
+    position: absolute;
+    top: 8%;
+    left: 31.5%;
+    border-radius: 10%;
+}
+@keyframes cambio4{
+    50% {background: #f5bfe9;}
+}
+
+input{
+    margin-top: 10%;
+    border-radius: 0.5rem;
+    background-color: #c772ca;
+}
+
+#centro{
+    position: absolute;
+    top: 80%;
+    left: 46%;
+}
+
+#centro1{
+    position: absolute;
+    top: 90%;
+    left: 47%;
+}
+
+body{
+    background-image: url(./fondo5.jpg);
+}
+
+/*-----------------------------exit--------------------------------*/
+#bye{
+    background-color: rgb(182, 144, 197);
+    background-image: url(./ranita.jpg);
+    animation: cambio3 5s infinite;
+    display: grid;
+    justify-content: center;
+    margin:4%;
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 10%;
+}
+@keyframes cambio3{
+    50% {background: #f5bfe9;}
+}
