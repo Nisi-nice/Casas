@@ -8,10 +8,14 @@
 </head>
 <body>
     <?php
+    //crear
     $nombrearch= 'datos.txt';
-    $nuevoArch = fopen ($nombrearch, 'w+');
-    echo "peneee";
-   // fclose ($nuevoArch);
+    $nuevoArch = fopen ($nombrearch, 'w');
+    
+    // renombrar
+    $nombreViejo = 'datos.txt';
+    $nombreNuevo = 'datos2.txt';
+    rename($nombreViejo, $nombreNuevo);
     ?>
 </body>
 </html>
