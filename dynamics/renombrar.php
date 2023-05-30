@@ -4,10 +4,19 @@
     $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
     $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
     $_SESSION["nombre_nue"]=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
+    $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
 
+
+    if ($_SESSION["accion"] == "archivo"){
     $nombreViejo = $_SESSION["nombre_arch"];
     $nombreNuevo = $_SESSION["nombre_nue"];
     rename($nombreViejo, "./$nombreNuevo/");
+    }
+    else {
+        $nombreViejo = $_SESSION["nombre_arch"];
+        $nombreNuevo = $_SESSION["nombre_nue"];
+        rename($nombreViejo, "./$nombreNuevo/");
+    }
 
     session_destroy();
 
@@ -23,10 +32,10 @@
      </head>
      <body>
     <div id='bye'>
-        <center><h1>Se ha renombrado tu archivo</h1></center>
+        <center><h1>Se ha renombrado con exito</h1></center>
         <br>
-        <form action='../ingresar.html' method='post' target='_self'>
-            <input type='submit' value='VOLVER AL INICIO'/>
+        <form action='./registro.php' method='post' target='_self'>
+            <input type='submit' value='REGISTRO'/>
 
         </form>
     </div>

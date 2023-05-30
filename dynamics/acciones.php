@@ -13,7 +13,7 @@
          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
          <title>Document</title>
      </head>
-          <div id='titulo'> ¿Qué quieres hacer hoy ". $_SESSION['nombre']. ".?</div>";
+          <div id='titulo'> ¿Qué quieres hacer hoy ". $_SESSION['nombre']. "?</div>";
           function desplegar_tepos(){
           echo "<head>
           <link rel='stylesheet' href='./style_casas.css'>

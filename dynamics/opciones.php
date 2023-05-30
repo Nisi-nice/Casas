@@ -5,6 +5,8 @@
      $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
      $_SESSION["nombre_nue"]=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
      $_SESSION["opcion"] = (isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
+     $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
+
 
      function crear(){
         echo "<head>
@@ -16,10 +18,10 @@
                     <form action='./crear.php' method='post' target='_self'>
                     <label>¿Qué quieres crear?:
                     <br>
-                    <input type='radio' name='opcion' checked value='archivo'>
+                    <input type='radio' name='accion' checked value='archivo'>
                     Archivo
                     <br>
-                    <input type='radio' name='opcion' value='carpeta'>
+                    <input type='radio' name='accion' value='carpeta'>
                     Carpeta
                     <br>
                     </label><br>
@@ -48,10 +50,10 @@
                     <form action='./eliminar.php' method='post' target='_self'>
                     <label>¿Qué quieres eliminar?:
                     <br>
-                    <input type='radio' name='opcion' checked value='archivo'>
+                    <input type='radio' name='accion' checked value='archivo'>
                     Archivo
                     <br>
-                    <input type='radio' name='opcion' value='carpeta'>
+                    <input type='radio' name='accion' value='carpeta'>
                     Carpeta
                     <br>
                     </label><br>
@@ -80,10 +82,10 @@
                     <form action='./renombrar.php' method='post' target='_self'>
                     <label>¿Qué quieres renombrar?:
                     <br>
-                    <input type='radio' name='opcion' checked value='archivo'>
+                    <input type='radio' name='accion' checked value='archivo'>
                     Archivo
                     <br>
-                    <input type='radio' name='opcion' value='carpeta'>
+                    <input type='radio' name='accion' value='carpeta'>
                     Carpeta
                     <br>
                     </label><br>

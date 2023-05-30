@@ -3,6 +3,7 @@
         $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
         $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
         $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
+
         echo "
             <!DOCTYPE html>
             <html lang='en'>
@@ -23,4 +24,5 @@
             </div>
             </body>
             ";
+
 ?>

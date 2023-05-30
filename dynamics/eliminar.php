@@ -3,9 +3,18 @@
     $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
     $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
     $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
+    $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
 
+    if ($_SESSION["accion"] == "archivo"){
     $archEliminar = $_SESSION["nombre_arch"];
     unlink($archEliminar);
+    }
+    else {
+
+        $nombrecarp = $_SESSION["nombre_arch"];
+        rmdir($nombrecarp);
+    }
+
 
     session_destroy();
 
@@ -21,7 +30,7 @@
      </head>
      <body>
     <div id='bye'>
-        <center><h1>Se ha eliminado tu archivo</h1></center>
+        <center><h1>Se ha eliminado tu con exito</h1></center>
         <br>
         <form action='../ingresar.html' method='post' target='_self'>
             <input type='submit' value='VOLVER AL INICIO'/>
