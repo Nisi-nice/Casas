@@ -41,5 +41,5 @@
     </div>
      </body>
      ";
-
+     $accion= "renombró $nombreViejo a $nombreNuevo";
 ?>

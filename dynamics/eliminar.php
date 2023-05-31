@@ -39,6 +39,6 @@
     </div>
      </body>
      ";
-
-
+     
+     $accion= "eliminó $archEliminar";
 ?>
