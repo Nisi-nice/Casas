@@ -24,12 +24,14 @@
             </div>
             </body>
             ";        
-            
+
         $archRegistro=fopen ($_SESSION["nombre"], 'w');
         fwrite($archRegistro,"El usuario" .$_SESSION["nombre"]." " .$accion);
         fclose($archRegistro);
         $archRegistro=fopen ($_SESSION["nombre"], 'a');
         while(!feof($$archRegistro)) {
-        $linea=fgets($archRegistro);
-        echo "$linea";
+            $linea=fgets($archRegistro);
+            echo "$linea";
+        }
+        fclose($archRegistro);
 ?>
