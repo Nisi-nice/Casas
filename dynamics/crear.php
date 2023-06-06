@@ -1,11 +1,12 @@
 <?php
     session_start();
-    $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
-    $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-    $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
-    $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
-
-
+    $nombre_arch =(isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
+    $accion= (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
+    $_SESSION["boton"];
+    $_SESSION["nombre"];
+    $_SESSION["nombre_arch"];
+    $_SESSION["accion"];    
+    
     if ($_SESSION["accion"] == "archivo"){
 
         $nombrearch= $_SESSION["nombre_arch"];
@@ -15,8 +16,6 @@
         $nombrecarp = $_SESSION["nombre_arch"];
         mkdir($nombrecarp, 0777, true);
     }
-
-    session_destroy();
 
     echo "
      <!DOCTYPE html>
@@ -39,6 +38,9 @@
     </div>
      </body>
      ";
-
-     $accion= "creó $nombrearch";
+   // $accion= "creó $nombrearch";
+    echo"
+    <form action='./registro.php' method='post' target='_self'>
+    <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+    </form>";
 ?>

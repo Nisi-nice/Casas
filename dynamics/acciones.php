@@ -1,7 +1,10 @@
 <?php
      session_start();
-     $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-     $_SESSION["casa"] = (isset($_POST["casa"]) && $_POST["casa"] != "")? $_POST["casa"] : false;
+     $nombre= (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
+     $casa= (isset($_POST["casa"]) && $_POST["casa"] != "")? $_POST["casa"] : false;
+
+     $_SESSION["nombre"] =  $nombre;
+     $_SESSION["casa"] = $casa;
 
      echo "
      <!DOCTYPE html>

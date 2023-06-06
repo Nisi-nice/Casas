@@ -1,12 +1,18 @@
 <?php
      session_start();
-     $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
-     $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-     $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
-     $_SESSION["nombre_nue"]=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
-     $_SESSION["opcion"] = (isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
-     $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
+     $boton = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
+     $nombre_arch =(isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
+     $nombre_nue=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
+     $accion= (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
+     $opcion = (isset($_POST["opcion"]) && $_POST["opcion"] != "")? $_POST["opcion"] : false;
 
+     $_SESSION["boton"] = $boton;
+     $_SESSION["nombre"];
+     $_SESSION["casa"];
+     $_SESSION["nombre_arch"] = $nombre_arch;
+     $_SESSION["nombre_nue"] = $nombre_nue;
+     $_SESSION["opcion"] = $opcion;
+     $_SESSION["accion"] = $accion;
 
      function crear(){
         echo "<head>
@@ -31,9 +37,6 @@
                     <input type='submit' value='CREAR'/><br>
                   </form>
              </div>
-               <form action='./registro.php' method='post' target='_self'>
-               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-               </form>
                <form action='./exit.php' method='post' target='_self'>
                <div id='centro1'><input type='submit' value='SALIR'/><br></div>
                </form>
@@ -63,9 +66,6 @@
                     <input type='submit' value='ELIMINAR'/><br>
                   </form>
              </div>
-               <form action='./registro.php' method='post' target='_self'>
-               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-               </form>
                <form action='./exit.php' method='post' target='_self'>
                <div id='centro1'><input type='submit' value='SALIR'/><br></div>
                </form>
@@ -79,7 +79,7 @@
              <body>
              <div class='opcion'>
                     <center><h1>Elige:</h1></center>
-                    <form action='./renombrar.php' method='post' target='_self'>
+                    <form action='./renombrar.php''./registro.php' method='post' target='_self'>
                     <label>¿Qué quieres renombrar?:
                     <br>
                     <input type='radio' name='accion' checked value='archivo'>
@@ -98,16 +98,12 @@
                     <input type='submit' value='RENOMBRAR'/><br>
                   </form>
              </div>
-               <form action='./registro.php' method='post' target='_self'>
-               <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
-               </form>
                <form action='./exit.php' method='post' target='_self'>
                <div id='centro1'><input type='submit' value='SALIR'/><br></div>
                </form>
         </body>
         ";
      }
-
 
      if ($_SESSION["opcion"] == "crear"){
            return crear();

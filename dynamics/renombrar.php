@@ -1,12 +1,12 @@
 <?php
     session_start();
-    $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
-    $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-    $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
-    $_SESSION["nombre_nue"]=(isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
-    $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
-
-
+    $nommbre_nue = (isset($_POST["nombre_nue"]) && $_POST["nombre_nue"] !="")? $_POST["nombre_nue"] : "Sin llenar";
+    $_SESSION["boton"];
+    $_SESSION["nombre"];
+    $_SESSION["nombre_arch"];
+    $_SESSION["accion"];
+    $_SESSION["nombre_nue"]= $nommbre_nue;
+    
     if ($_SESSION["accion"] == "archivo"){
     $nombreViejo = $_SESSION["nombre_arch"];
     $nombreNuevo = $_SESSION["nombre_nue"];
@@ -17,8 +17,6 @@
         $nombreNuevo = $_SESSION["nombre_nue"];
         rename($nombreViejo, "./$nombreNuevo/");
     }
-
-    session_destroy();
 
     echo "
      <!DOCTYPE html>
@@ -41,5 +39,9 @@
     </div>
      </body>
      ";
-     $accion= "renombró $nombreViejo a $nombreNuevo";
+     
+     echo"
+     <form action='./registro.php' method='post' target='_self'>
+     <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+     </form>";
 ?>

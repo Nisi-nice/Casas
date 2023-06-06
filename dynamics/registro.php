@@ -1,9 +1,27 @@
 <?php
         session_start();
-        $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
-        $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-        $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
+        $_SESSION["boton"];
+        $_SESSION["nombre_arch"];
+        $_SESSION["opcion"];  
+        $_SESSION["nombre"];
+        $_SESSION["accion"];
+        $_SESSION["nombre_nue"];
+        $_SESSION["casa"]; 
 
+        if ($_SESSION["opcion"] == "crear"){
+            echo $imprimir= "creó";
+   
+      }      
+      else{ 
+           if ($_SESSION["opcion"] == "renombrar"){
+            echo $imprimir= "renombró";
+           }
+           else{ 
+                if ($_SESSION["opcion"] == "eliminar"){
+                    echo $imprimir= "eliminó";
+                }      
+           } 
+      }      ;  
         echo "
             <!DOCTYPE html>
             <html lang='en'>
@@ -17,21 +35,25 @@
             <body>
             <div id='registro'>
                 <center><h1>REGISTRO:</h1></center>
-                <br>
+                <br>";
+                $archUser = $_SESSION["nombre"];
+                $casa=$_SESSION["casa"]; 
+                $arch= $_SESSION["nombre_arch"];
+                $archRegistro= fopen ($archUser, 'a+');
+                fwrite($archRegistro," $archUser de la casa $casa,  $imprimir: $arch \n ");
+                fclose($archRegistro);
+                $archRegistro= fopen ($archUser, 'r');
+                while(!feof($archRegistro)) {
+                    $linea=fgets($archRegistro);
+                    echo $linea; 
+                    echo "<br>";
+                }
+                fclose($archRegistro);
+        echo "    
                 <form action='../ingresar.html' method='post' target='_self'>
                     <input type='submit' value='VOLVER AL INICIO'/>
                 </form>
             </div>
             </body>
-            ";        
-        $archUser="$_SESSION["nombre"]";
-        $archRegistro=fopen ($archUser, 'w');
-        fwrite($archRegistro,"El usuario $_SESSION["nombre"] $accion");
-        fclose($archRegistro);
-        $archRegistro=fopen ($archUser, 'r');
-        while(!feof($$archRegistro)) {
-            $linea=fgets($archRegistro);
-            echo "$linea";
-        }
-        fclose($archRegistro);
+            ";
 ?>

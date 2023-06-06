@@ -1,10 +1,10 @@
 <?php
     session_start();
-    $_SESSION["boton"] = (isset($_POST["boton"]) && $_POST["boton"] != "")? $_POST["boton"] : false;
-    $_SESSION["nombre"] = (isset($_POST["nombre"]) && $_POST["nombre"] != "")? $_POST["nombre"] : false;
-    $_SESSION["nombre_arch"] = (isset($_POST["nombre_arch"]) && $_POST["nombre_arch"] != "")? $_POST["nombre_arch"] : false;
-    $_SESSION["accion"] = (isset($_POST["accion"]) && $_POST["accion"] != "")? $_POST["accion"] : false;
-
+    $_SESSION["boton"];
+    $_SESSION["nombre"];
+    $_SESSION["nombre_arch"];
+    $_SESSION["accion"];
+    
     if ($_SESSION["accion"] == "archivo"){
     $archEliminar = $_SESSION["nombre_arch"];
     unlink($archEliminar);
@@ -14,9 +14,6 @@
         $nombrecarp = $_SESSION["nombre_arch"];
         rmdir($nombrecarp);
     }
-
-
-    session_destroy();
 
     echo "
      <!DOCTYPE html>
@@ -40,5 +37,8 @@
      </body>
      ";
      
-     $accion= "eliminó $archEliminar";
+     echo"
+     <form action='./registro.php' method='post' target='_self'>
+     <div id='centro'><input type='submit' value='REGISTRO'/><br></div>
+     </form>";
 ?>
